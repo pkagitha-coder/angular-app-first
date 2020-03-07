@@ -1,1 +1,13 @@
-<p>albums works!</p>
+<div>
+  <h3>Albums Collection</h3>
+
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let album of albums | async">
+      <div class="card">
+        <div class="card-body">
+          <a routerLink="photos/{{ album.id }}">{{ album.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

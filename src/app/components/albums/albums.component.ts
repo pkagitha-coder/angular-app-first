@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PhotosService} from '../../services/photos.service'
 
 @Component({
   selector: 'app-albums',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumsComponent implements OnInit {
 
-  constructor() { }
+  albums;
+
+  constructor(
+    private photosService : PhotosService
+  ) { }
 
   ngOnInit(): void {
+    this.albums = this.photosService.getAlbums();
   }
 
 }
